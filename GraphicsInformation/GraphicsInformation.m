@@ -11,7 +11,7 @@ Begin["`Private`"]
 (* Implementation of the package *)
 
 GraphicsInformation[gr_Graphics] := Replace[
-    graphicsInformation[{gr}],
+    GraphicsInformation[{gr}],
     Rule[a_, {b_}] :> a -> b,
     {1}
 ]
