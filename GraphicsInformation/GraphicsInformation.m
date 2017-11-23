@@ -40,11 +40,7 @@ GraphicsInformation[gr:{__Graphics}] := Module[{info, res},
 ]
 
 toNotebook[gr_] := Notebook[
-    {
-    Cell[BoxData @ ToBoxes @ instrumentGraphics[gr],
-        "Output"
-    ]
-    },
+    Cell[BoxData @ ToBoxes @ #, "Output"]& /@ instrumentGraphics[gr],
     WindowSize -> CurrentValue[EvaluationNotebook[], WindowSize],
     Evaluator -> CurrentValue[EvaluationNotebook[], Evaluator]
 ]
